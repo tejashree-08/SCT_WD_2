@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NEXUS — Futuristic Calculator</title>
+  <meta name="description" content="A premium, neon glassmorphism calculator with history, themes, and keyboard support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated background -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="aurora">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+  <div class="grid-overlay"></div>
+  <!-- Loader -->
+  <div id="loader" class="loader">
+    <div class="loader-ring"></div>
+    <div class="loader-text">NEXUS // BOOTING</div>
+  </div>
+  <!-- Top nav -->
+  <header class="nav">
+    <div class="brand">
+      <div class="logo-mark"></div>
+      <div>
+        <div class="brand-name">NEXUS</div>
+        <div class="brand-sub">Quantum Calculator v3.0</div>
+      </div>
+    </div>
+    <nav class="nav-actions">
+      <button class="chip" id="toggle-sound" title="Toggle sound (S)">
+        <span class="dot"></span> SOUND
+      </button>
+      <button class="chip" id="toggle-theme" title="Toggle theme (T)">
+        <span class="dot"></span> DARK
+      </button>
+      <button class="chip ghost" id="toggle-history" title="History (H)">HISTORY</button>
+    </nav>
+  </header>
+  <!-- Hero / landing -->
+  <section class="hero">
+    <div class="hero-tag">// AI-POWERED · NEURAL MATH ENGINE</div>
+    <h1 class="hero-title">
+      Calculate at the <span class="grad">speed of light</span>.
+    </h1>
+    <p class="hero-sub">
+      A premium computation surface engineered with holographic glass, real-time
+      expression preview, and a memory of every number you've ever crunched.
+    </p>
+  </section>
+  <!-- Main grid -->
+  <main class="stage">
+    <!-- Calculator -->
+    <section class="calc-card" id="calc">
+      <div class="card-glow"></div>
+      <div class="card-head">
+        <div class="lights">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="card-title">QUANTUM PAD</div>
+        <button class="copy-btn" id="copy-btn" title="Copy result (Ctrl+C)">⧉ COPY</button>
+      </div>
+      <!-- Display -->
+      <div class="display">
+        <div class="display-expression" id="expression">&nbsp;</div>
+        <div class="display-result" id="result">0</div>
+        <div class="display-scan"></div>
+      </div>
+      <!-- Buttons -->
+      <div class="pad">
+        <button class="btn fn" data-action="clear">C</button>
+        <button class="btn fn" data-action="backspace">⌫</button>
+        <button class="btn fn" data-action="percent">%</button>
+        <button class="btn op" data-op="/">÷</button>
+        <button class="btn fn" data-action="sqrt">√</button>
+        <button class="btn fn" data-action="square">x²</button>
+        <button class="btn fn" data-action="reciprocal">1/x</button>
+        <button class="btn op" data-op="*">×</button>
+        <button class="btn num" data-num="7">7</button>
+        <button class="btn num" data-num="8">8</button>
+        <button class="btn num" data-num="9">9</button>
+        <button class="btn op" data-op="-">−</button>
+        <button class="btn num" data-num="4">4</button>
+        <button class="btn num" data-num="5">5</button>
+        <button class="btn num" data-num="6">6</button>
+        <button class="btn op" data-op="+">+</button>
+        <button class="btn num" data-num="1">1</button>
+        <button class="btn num" data-num="2">2</button>
+        <button class="btn num" data-num="3">3</button>
+        <button class="btn fn" data-action="sign">±</button>
+        <button class="btn num zero" data-num="0">0</button>
+        <button class="btn num" data-action="decimal">.</button>
+        <button class="btn eq" data-action="equals">=</button>
+      </div>
+    </section>
+    <!-- History panel -->
+    <aside class="history-card" id="history-card">
+      <div class="card-glow"></div>
+      <div class="card-head">
+        <div class="card-title">HISTORY LOG</div>
+        <button class="copy-btn" id="clear-history">CLEAR</button>
+      </div>
+      <ul class="history-list" id="history-list">
+        <li class="history-empty">No calculations yet. Start crunching.</li>
+      </ul>
+    </aside>
+  </main>
+  <footer class="foot">
+    <div>© Nexus Calc — Calculate Beyond Limits</div>
+    <div class="foot-keys">
+      <kbd>0–9</kbd><kbd>+ − × ÷</kbd><kbd>Enter</kbd><kbd>⌫</kbd><kbd>Esc</kbd><kbd>T</kbd><kbd>S</kbd><kbd>H</kbd>
+    </div>
+  </footer>
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
